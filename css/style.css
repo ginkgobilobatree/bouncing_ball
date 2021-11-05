@@ -1,0 +1,56 @@
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+.ball {
+    position: absolute;
+    bottom: 30vh;
+    width: 10rem;
+    height: 10rem;
+    background-color: orangered;
+    clip-path: circle();
+    animation:  forward 5s infinite linear, bouncing .7s infinite ease-in-out;
+}
+
+.ground {
+    position: absolute;
+    top: 70vh;
+    left: 0;
+    border-top: 20px solid #333;
+    width: 100%;
+}
+
+@keyframes forward {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes bouncing {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
